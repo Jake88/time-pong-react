@@ -1,0 +1,60 @@
+{
+  "name": "time-pong",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "connected-react-router": "^4.3.0",
+    "firebase": "^5.2.0",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-saga": "^0.16.0",
+    "styled-components": "^3.3.2",
+    "styled-icons": "^2.2.0",
+    "styled-reset": "^1.3.5",
+    "tinycolor2": "^1.4.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot --open --mode development",
+    "build": "webpack --mode production",
+    "test": "jest -u"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.2.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.1.0",
+    "jest-styled-components": "^5.0.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./src/configs/jest.js",
+    "testRegex": "\\.(spec)\\.js?$",
+    "collectCoverage": true,
+    "coverageDirectory": "./coverage",
+    "collectCoverageFrom": [
+      "**/src/app/**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/src/app/utils/constants/**"
+    ],
+    "modulePaths": [
+      "src/app"
+    ]
+  }
+}

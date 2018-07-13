@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Menu /> snapshot 1`] = `
+<styled.nav>
+  <styled.a
+    current={false}
+    id="link-how-to-play"
+    onClick={[Function]}
+  >
+    How to play
+  </styled.a>
+  <styled.a
+    current={false}
+    id="link-play"
+    onClick={[Function]}
+  >
+    Play
+  </styled.a>
+  <styled.a
+    current={false}
+    id="link-cards"
+    onClick={[Function]}
+  >
+    Cards
+  </styled.a>
+  <styled.a
+    current={false}
+    id="link-create"
+    onClick={[Function]}
+  >
+    Create
+  </styled.a>
+</styled.nav>
+`;
