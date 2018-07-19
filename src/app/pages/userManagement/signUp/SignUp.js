@@ -1,28 +1,28 @@
 import React from 'react'
-import { Field } from 'redux-form'
-import {
-  ContentPanel,
-  Title
-} from 'common/styledComponents'
+import SignUpForm from './signUpForm'
+import ContentPanel from 'common/contentPanel'
+import { Title, SubHeader, Divider } from 'common/styledComponents'
+import Button from 'common/inputs/button'
+import { FacebookSquare } from 'styled-icons/fa-brands/FacebookSquare'
+import { Google } from 'styled-icons/fa-brands/Google'
 
-const SignUp = () => {
-  return (
-    <React.Fragment>
+import { colours } from 'utils/constants/globalStyles'
 
-      <Title>Sign Up</Title>
+const SignUp = ({status}) => (
+  <React.Fragment>
+    <Title>Sign Up</Title>
 
-      <ContentPanel>
-        <form>
-          <label htmlFor="email">Email</label>
-          <Field name="email" component="input" type="text" />
+    <ContentPanel status={status}>
+      <SubHeader>Sign up with:</SubHeader>
+      <Button variety='brand' icon={<FacebookSquare />} brand={colours.brands.facebook}>Sign up with Facebook</Button>
+      <Button variety='brand' icon={<Google />} brand={colours.brands.google}>Sign up with Google</Button>
 
-          <label htmlFor="password">Password</label>
-          <Field name="password" component="input" type="password" />
-        </form>
-      </ContentPanel>
+      <Divider text='or' />
+      <SubHeader>Sign up with email:</SubHeader>
+      <SignUpForm />
+    </ContentPanel>
 
-    </React.Fragment>
-  )
-}
+  </React.Fragment>
+)
 
 export default SignUp

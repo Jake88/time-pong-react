@@ -8,9 +8,9 @@ import {
 import {
   Title,
   SubHeader,
-  Button,
-  Emph
+  AlteredText
 } from 'common/styledComponents'
+import Button from 'common/inputs/button'
 import { Circle } from 'styled-icons/fa-regular/Circle'
 import { Suitcase } from 'styled-icons/fa-solid/Suitcase'
 import { Beer } from 'styled-icons/fa-solid/Beer'
@@ -53,10 +53,10 @@ const Instructions = (props) => (
         When the game starts, the starting player must bounce the ping pong ball on the table and into the cup.
       </Step>
       <Step>
-        If the balls goes in on the <Emph>first attempt</Emph>, that player may pass the cup to <Emph>anyone</Emph> in the group.
+        If the balls goes in on the <AlteredText heavy>first attempt</AlteredText>, that player may pass the cup to <AlteredText heavy>anyone</AlteredText> in the group.
       </Step>
       <Step>
-        On any <Emph>subsequent attempt</Emph>, the player <Emph>must</Emph> pass the cup to the person to their left.
+        On any <AlteredText heavy>subsequent attempt</AlteredText>, the player <AlteredText heavy>must</AlteredText> pass the cup to the person to their left.
       </Step>
       <Step>
         When the timer stops, the player with the cup in their possession has lost and must follow the card instructions.

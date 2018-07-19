@@ -10,8 +10,12 @@ export const setSpell = card => ({type: SET_SPELL, card})
 export const setActiveCard = card => ({type: SET_ACTIVE_CARD, card})
 export const toggleMenu = forceFlag => ({type: TOGGLE_MENU, forceFlag})
 
+// Initial state
+const initialState = {
+}
+
 // reducers
-export default (state = {}, action) => {
+export default (state = initialState, action) => {
   switch (action.type) {
     case SET_CURSE:
       return {

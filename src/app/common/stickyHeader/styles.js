@@ -2,18 +2,19 @@ import sc from 'styled-components'
 import * as gs from 'utils/constants/globalStyles'
 import { Bars } from 'styled-icons/fa-solid/Bars'
 import { UserCog } from 'styled-icons/fa-solid/UserCog'
-import { Button } from '../styledComponents'
+import { PrimaryButton } from 'common/inputs/button/styles'
 
 export const Banner = sc.header`
   width: 100%;
   color: ${gs.colours.white}
   line-height: ${gs.specifics.stickyHeaderHeight};
   background-color: ${gs.colours.primary.default};
-  box-shadow: 0 2px 3px ${gs.colours.grey};
+  box-shadow: 0 0 10px 0 ${gs.colours.black};
   position: fixed;
   top: 0;
   left: 0;
   text-align: center;
+  z-index: 1;
 `
 
 export const Logo = sc.h2`
@@ -29,7 +30,7 @@ export const UserIcon = sc(UserCog).attrs({
   size: gs.font.sizes.normal
 })``
 
-const MenuButton = Button.extend`
+const MenuButton = PrimaryButton.extend`
   height: ${gs.specifics.stickyHeaderHeight};
   width: ${gs.specifics.stickyHeaderHeight};
   border-bottom: none;
