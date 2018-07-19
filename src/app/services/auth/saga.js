@@ -1,12 +1,11 @@
-import { call, select, put } from 'redux-saga/effects'
+import { takeLatest, call, select, put } from 'redux-saga/effects'
+import Firebase from 'utils/firebase'
 import { getFormValues } from 'redux-form'
 import FormNames from 'utils/constants/formNames'
-import Firebase from 'utils/firebase'
+import ApiManager from 'services/apiManager/saga'
+import {types as authTypes} from './'
 
-import {
-} from './'
-
-export function* signUp ({type}) {
+function* signUp () {
   try {
     const { email, password } = yield select(getFormValues(FormNames.SIGN_UP))
     const response = yield call(Firebase.doCreateUserWithEmailAndPassword, email, password)
@@ -17,4 +16,8 @@ export function* signUp ({type}) {
     console.log('Error getting user', err)
     throw(err)
   }
+}
+
+export default {
+  signUp: takeLatest(authTypes.SIGN_UP, ApiManager.addStatus(signUp))
 }

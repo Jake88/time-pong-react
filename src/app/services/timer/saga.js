@@ -1,15 +1,16 @@
-import { select, put } from 'redux-saga/effects'
+import { takeLatest, select, put } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
 
-import { types } from './'
+import {
+  types,
+  actions,
+  selectors
+} from './'
 
-const {
-  getMinTime,
-  getMaxTime,
-  setTime
-} = types
+const { getMinTime, getMaxTime } = selectors
+const { setTime } = actions
 
-export function* runTimer () {
+function* runTimer () {
   try {
     const minTime = yield select(getMinTime)
     const maxTime = yield select(getMaxTime)
@@ -26,4 +27,8 @@ export function* runTimer () {
   } catch (err) {
 
   }
+}
+
+export default {
+  runTimer: takeLatest(types.START_TIMER, runTimer)
 }
