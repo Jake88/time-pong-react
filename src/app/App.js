@@ -1,6 +1,6 @@
 import React from 'react'
-import StickyHeader from 'common/stickyHeader'
-import page from 'pages'
+import StickyHeader from 'components/common/stickyHeader'
+import page from 'components/pages'
 import ROUTES from 'utils/constants/routes'
 import {
   Redirect,

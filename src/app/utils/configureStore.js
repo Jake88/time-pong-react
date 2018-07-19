@@ -4,8 +4,7 @@ import { applyMiddleware, createStore, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { connectRouter, routerMiddleware } from 'connected-react-router'
 
-import rootSaga from 'sagas'
-import rootReducer from 'reducers'
+import { rootReducer, rootSaga } from '../services'
 
 export const history = createHistory()
 
