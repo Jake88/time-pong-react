@@ -1,13 +1,13 @@
 import tinycolor from 'tinycolor2'
 
-const darken = (colour, percent = 10) => tinycolor.mix(colour, '#000', percent).toString()
-const lighten = (colour, percent = 10) => tinycolor.mix(colour, '#fff', percent).toString()
+const darken = (colour, percent = 20) => tinycolor.mix(colour, '#000', percent).toString()
+const lighten = (colour, percent = 20) => tinycolor.mix(colour, '#fff', percent).toString()
 const fade = (colour, fraction = 0.2) => tinycolor(colour).setAlpha(fraction).toString()
 const createPalette = colour => ({
   darker: darken(colour),
-  darkest: darken(colour, 50),
+  darkest: darken(colour, 60),
   lighter: lighten(colour),
-  lightest: lighten(colour, 50),
+  lightest: lighten(colour, 60),
   tinted: lighten(colour, 95),
   faded: fade(colour)
 })
@@ -32,7 +32,7 @@ export const spacing = {
   nil: 0,
   small: '8px',
   normal: '16px',
-  large: '24px'
+  large: '32px'
 }
 
 const PRIMARY_COLOUR = '#550b60'
@@ -51,6 +51,7 @@ export const colours = {
   grey: '#999',
   darkGrey: '#666',
   black: '#222',
+  fadedBlack: fade('#222', 0.6),
 
   error: Object.assign({default: ERROR_COLOUR}, createPalette(ERROR_COLOUR)),
   success: Object.assign({default: SUCCESS_COLOUR}, createPalette(SUCCESS_COLOUR)),
@@ -90,4 +91,10 @@ export const specifics = {
 
 export const breakpoints = {
   desktop: '1000px'
+}
+
+export const layers = {
+  base: 0,
+  important: 1,
+  overlay: 2
 }
