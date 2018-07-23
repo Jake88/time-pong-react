@@ -1,7 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import propTypes, {varietyTypes} from './propTypes'
 import {
   PrimaryButton,
+  SecondaryButton,
   LinkButton,
   BrandButton
 } from './styles'
@@ -12,14 +13,14 @@ const Button = (props) => {
   let ButtonType = PrimaryButton
 
   switch (variety) {
-    case 'link':
+    case varietyTypes.LINK:
       ButtonType = LinkButton
       break
-    case 'brand':
+    case varietyTypes.BRAND:
       ButtonType = BrandButton
       break
-    case 'secondary':
-      ButtonType = LinkButton
+    case varietyTypes.SECONDARY:
+      ButtonType = SecondaryButton
       break
   }
 
@@ -31,8 +32,6 @@ const Button = (props) => {
   )
 }
 
-Button.propTypes = {
-  icon: PropTypes.element
-}
+Button.propTypes = propTypes
 
 export default Button

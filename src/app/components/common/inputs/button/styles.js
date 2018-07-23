@@ -1,33 +1,56 @@
 import sc from 'styled-components'
 import * as gs from 'utils/constants/globalStyles'
 
+export const ButtonGroup = sc.div`
+  ${ ({direction}) => direction !== 'vertical' ? `
+    & > button {
+      margin-right: ${gs.spacing.small};
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  ` : `
+    & > button {
+      width: 100%;
+      margin-bottom: ${gs.spacing.small};
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  `}
+`
+
 const Button = sc.button`
   font-size: ${({small}) => small ? gs.font.sizes.small : gs.font.sizes.normal};
   font-weight: ${gs.font.weights.normal};
   padding: ${gs.spacing.normal} ${gs.spacing.large};
   cursor: pointer;
   border-radius: ${gs.radius.small};
-  border: none;
-  
-  margin-right: ${gs.spacing.small};
-  &:last-child {
-    margin-right: 0;
-  }
+  border: none;  
 `
 
 export const PrimaryButton = Button.extend`
   background-color: ${gs.colours.primary.default};
   color: ${gs.colours.white};
-  transition: background-color ${gs.transitions.fast}, color ${gs.transitions.fast};
+  transition: box-shadow ${gs.transitions.normal}, color ${gs.transitions.normal};
   
   &:hover,
   &:focus {
-    color: ${gs.colours.secondary.lightest};
-    background-color: ${gs.colours.primary.darker};
+    color: ${gs.colours.secondary.default};
+    box-shadow: 0 0 80px 0 ${gs.colours.primary.darker} inset;
   }
+`
+
+
+export const SecondaryButton = Button.extend`
+  border: ${gs.borders.thick} ${gs.colours.primary.default};
+  color: ${gs.colours.primary.default};
+  background-color: ${gs.colours.white};
+  transition: box-shadow ${gs.transitions.slow};
   
-  &:active {
-    border: 0;
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 80px 0 ${gs.colours.primary.lightest} inset;
   }
 `
 
@@ -35,13 +58,14 @@ export const LinkButton = Button.extend`
   text-decoration: underline;
   color: ${gs.colours.primary.default};
   background-color: transparent;
-  transition: color ${gs.transitions.fast}, transform ${gs.transitions.fast};
+  transition: all ${gs.transitions.normal};
   padding: ${gs.spacing.small} ${gs.spacing.small};
   
   &:hover,
   &:focus {
-    color: ${gs.colours.secondary.darkest};
     transform: scale(1.1);
+    color: ${gs.colours.primary.darkest};
+    text-decoration-color: ${gs.colours.secondary.darker};
   }
 `
 
