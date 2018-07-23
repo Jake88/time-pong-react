@@ -1,24 +1,51 @@
 import React from 'react'
 import SignUpForm from './signUpForm/index'
-import ContentPanel from 'components/common/contentPanel'
-import { Title, SubHeader, Divider } from 'components/common/styledComponents'
+import { Title, SubHeader, Divider, ContentPanel } from 'components/common/styledComponents'
 import Button from 'components/common/inputs/button'
+import Loader from 'components/common/loader'
+import ROUTES from 'utils/constants/routes'
+
 import { FacebookSquare } from 'styled-icons/fa-brands/FacebookSquare'
 import { Google } from 'styled-icons/fa-brands/Google'
 
 import { colours } from 'utils/constants/globalStyles'
 
-const SignUp = ({status}) => (
+const SignUp = ({status, go}) => (
   <React.Fragment>
     <Title>Sign Up</Title>
 
-    <ContentPanel status={status}>
+    {!status.undefined && <Loader
+      status={status}
+      successMessage='Welcome to the Pongers!'
+      successButton={{
+        id: 'loaderSuccess',
+        label: `Let's play!`,
+        onClick: () => go(ROUTES.GAME)
+      }}
+    />}
+
+    <ContentPanel>
       <SubHeader>Sign up with:</SubHeader>
-      <Button variety='brand' icon={<FacebookSquare />} brand={colours.brands.facebook}>Sign up with Facebook</Button>
-      <Button variety='brand' icon={<Google />} brand={colours.brands.google}>Sign up with Google</Button>
+      <Button
+        id='signUpWithFacebook'
+        variety='brand'
+        icon={<FacebookSquare />}
+        brand={colours.brands.facebook}
+      >
+        Sign up with Facebook
+      </Button>
+      <Button
+        id='signUpWithGoogle'
+        variety='brand'
+        icon={<Google />}
+        brand={colours.brands.google}
+      >
+        Sign up with Google
+      </Button>
 
       <Divider text='or' />
       <SubHeader>Sign up with email:</SubHeader>
+
       <SignUpForm />
     </ContentPanel>
 
