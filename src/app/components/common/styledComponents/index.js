@@ -1,9 +1,10 @@
-import sc from 'styled-components'
+import sc, { keyframes } from 'styled-components'
 import * as gs from 'utils/constants/globalStyles'
 
 export const Title = sc.h1`
   font-size: ${gs.font.sizes.title};
-  padding: ${gs.spacing.large} ${gs.spacing.nil};
+  padding: ${gs.spacing.nil};
+  padding-bottom: ${gs.spacing.large};
 `
 
 export const SubHeader = sc.h2`
@@ -41,4 +42,14 @@ export const Divider = sc.div`
   border: ${gs.borders.thin} ${gs.colours.lightGrey};
   border-radius: 50% / 100%;
   margin: ${gs.spacing.large};
+`
+
+export const ContentPanel = sc.section`
+  border: ${gs.borders.thin} ${gs.colours.lightGrey};
+  border-radius: ${gs.radius.large};
+  margin: 0 auto;
+  padding: ${gs.spacing.normal};
+  background-color: ${gs.colours.white}
+  max-width: 470px;
+  text-align: left;
 `

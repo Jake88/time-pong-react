@@ -15,7 +15,7 @@ export const MenuWrapper = sc.nav`
 `
 
 export const MenuLink = sc.a`
-  color: ${({current}) => current ? gs.colours.secondary.default : 'inherit'};
+  color: ${({current}) => current ? gs.colours.secondary.darker : 'inherit'};
   display: block;
   border-bottom: ${gs.borders.thin} ${gs.colours.primary.darker};
   transition: background-color ${gs.transitions.fast}, transform ${gs.transitions.fast}, color ${gs.transitions.fast};
@@ -24,7 +24,7 @@ export const MenuLink = sc.a`
   
   &:hover,
   &:focus {
-    color: ${gs.colours.secondary.lightest};
+    color: ${gs.colours.secondary.default};
     background-color: ${gs.colours.primary.darker};
     transform: scale(1.1);
   }

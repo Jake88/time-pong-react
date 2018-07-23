@@ -14,7 +14,7 @@ export const Banner = sc.header`
   top: 0;
   left: 0;
   text-align: center;
-  z-index: 1;
+  z-index: ${gs.layers.important};
 `
 
 export const Logo = sc.h2`
@@ -82,6 +82,6 @@ export const Link = sc.a`
   
   &:hover,
   &:focus {
-    color: ${gs.colours.secondary.lightest};
+    color: ${gs.colours.secondary.default};
   }
 `
