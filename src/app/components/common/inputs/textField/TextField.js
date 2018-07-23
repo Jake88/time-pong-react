@@ -5,7 +5,8 @@ import {
   FieldWrapper,
   Text,
   Label,
-  Error
+  Error,
+  Warning
 } from './styles'
 
 const TextField = props => {
@@ -26,6 +27,7 @@ const TextField = props => {
       />
 
       <Error error={meta.touched && meta.error}>{meta.touched && (meta.error) || '\u00A0'}</Error>
+      <Warning error={meta.touched && meta.warning}>{meta.touched && (meta.warning) || '\u00A0'}</Warning>
     </FieldWrapper>
   )
 }

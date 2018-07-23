@@ -18,13 +18,14 @@ export const Label = sc.label`
 
 export const Text = sc.input`
   font-size: ${gs.font.sizes.normal};
-  padding: ${gs.spacing.small};
+  padding: ${gs.spacing.nil} ${gs.spacing.small};
   border-radius: ${gs.radius.small};
   border: ${gs.borders.thin} ${({error}) => error ? gs.colours.error.default : gs.colours.grey};
   background-color: ${({error}) => error ? gs.colours.error.tinted : 'inherit'};
   color: ${({error}) => error ? gs.colours.error.darker : 'inherit'};
   outline: none;
   transition: all ${gs.transitions.fast};
+  line-height: 48px;
   
   &:focus {
     border: ${gs.borders.thin} ${gs.colours.primary.default};
@@ -40,4 +41,8 @@ export const Error = sc.p`
   max-height: ${({error}) => error ? gs.spacing.normal : gs.spacing.nil};
   transition: max-height ${gs.transitions.normal};
   overflow: hidden;
+`
+
+export const Warning = Error.extend`
+  color: ${gs.colours.primary.lighter};
 `
