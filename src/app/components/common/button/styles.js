@@ -21,9 +21,11 @@ export const ButtonGroup = sc.div`
 `
 
 const Button = sc.button`
+  transition: box-shadow ${gs.transitions.normal}, color ${gs.transitions.normal};
   font-size: ${({small}) => small ? gs.font.sizes.small : gs.font.sizes.normal};
   font-weight: ${gs.font.weights.normal};
-  padding: ${gs.spacing.normal} ${gs.spacing.large};
+  line-height: ${gs.lineHeights.withoutBorder};
+  padding: ${gs.spacing.nil} ${gs.spacing.large};
   cursor: pointer;
   border-radius: ${gs.radius.small};
   border: none;  
@@ -32,7 +34,6 @@ const Button = sc.button`
 export const PrimaryButton = Button.extend`
   background-color: ${gs.colours.primary.default};
   color: ${gs.colours.white};
-  transition: box-shadow ${gs.transitions.normal}, color ${gs.transitions.normal};
   
   &:hover,
   &:focus {
@@ -44,9 +45,9 @@ export const PrimaryButton = Button.extend`
 
 export const SecondaryButton = Button.extend`
   border: ${gs.borders.thick} ${gs.colours.primary.default};
+  line-height: ${gs.lineHeights.withThickBorder};
   color: ${gs.colours.primary.default};
   background-color: ${gs.colours.white};
-  transition: box-shadow ${gs.transitions.slow};
   
   &:hover,
   &:focus {
@@ -58,7 +59,6 @@ export const LinkButton = Button.extend`
   text-decoration: underline;
   color: ${gs.colours.primary.default};
   background-color: transparent;
-  transition: all ${gs.transitions.normal};
   padding: ${gs.spacing.small} ${gs.spacing.small};
   
   &:hover,
@@ -75,11 +75,10 @@ export const BrandButton = Button.extend`
   background-color: ${({brand}) => brand ? brand.default : gs.colours.primary.default};
   color: ${gs.colours.white};
   transition: background-color ${gs.transitions.fast};
-  padding: ${gs.spacing.small} ${gs.spacing.small};
+  padding: ${gs.spacing.nil} ${gs.spacing.small};
   align-items: center;
   margin-bottom: ${gs.spacing.small};
   position: relative;
-  line-height: 34px;
   
   & > * {
     flex-grow: 1;

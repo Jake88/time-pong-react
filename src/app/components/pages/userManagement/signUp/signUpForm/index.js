@@ -1,7 +1,5 @@
 import SignUpForm from './SignUpForm'
-import {
-  connecter,
-  former
-} from './SignUpFormContainer'
+import connect from './connect'
+import form from './formConfig'
 
-export default connecter(former(SignUpForm))
+export default connect(form(SignUpForm))

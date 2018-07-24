@@ -1,4 +1,4 @@
 import Timer from './Timer'
-import { connecter } from './TimerContainer'
+import connect from './connect'
 
-export default connecter(Timer)
+export default connect(Timer)

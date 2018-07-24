@@ -1,20 +1,20 @@
 import { connect } from 'react-redux'
-import { push } from 'connected-react-router'
 import {
-  actions,
-  selectors
+  selectors,
+  actions
 } from 'services/app'
+import { push } from "connected-react-router"
 
 export const mapStateToProps = state => ({
-  active: selectors.isMenuActive(state),
-  current: state.router.location.pathname
+  isMenuActive: selectors.isMenuActive(state)
 })
 
 export const mapDispatchToProps = dispatch => ({
+  toggleMenu: forceFlag => dispatch(actions.toggleMenu(forceFlag)),
   go: path => {
     dispatch(actions.toggleMenu(false))
     dispatch(push(path))
   }
 })
 
-export const connecter = connect(mapStateToProps, mapDispatchToProps)
+export default connect(mapStateToProps, mapDispatchToProps)

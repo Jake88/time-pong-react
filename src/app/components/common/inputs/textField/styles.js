@@ -25,7 +25,7 @@ export const Text = sc.input`
   color: ${({error}) => error ? gs.colours.error.darker : 'inherit'};
   outline: none;
   transition: all ${gs.transitions.fast};
-  line-height: 48px;
+  line-height: ${gs.lineHeights.withThinBorder};
   
   &:focus {
     border: ${gs.borders.thin} ${gs.colours.primary.default};

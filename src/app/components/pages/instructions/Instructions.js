@@ -10,7 +10,7 @@ import {
   SubHeader,
   AlteredText
 } from 'components/common/styledComponents'
-import Button from 'components/common/inputs/button'
+import Button from 'components/common/button'
 import { Circle } from 'styled-icons/fa-regular/Circle'
 import { Suitcase } from 'styled-icons/fa-solid/Suitcase'
 import { Beer } from 'styled-icons/fa-solid/Beer'

@@ -2,12 +2,12 @@ import sc from 'styled-components'
 import * as gs from 'utils/constants/globalStyles'
 import { Bars } from 'styled-icons/fa-solid/Bars'
 import { UserCog } from 'styled-icons/fa-solid/UserCog'
-import { PrimaryButton } from 'components/common/inputs/button/styles'
+import { PrimaryButton } from 'components/common/button/styles'
 
 export const Banner = sc.header`
   width: 100%;
   color: ${gs.colours.white}
-  line-height: ${gs.specifics.stickyHeaderHeight};
+  line-height: ${gs.lineHeights.withThinBorder};
   background-color: ${gs.colours.primary.default};
   box-shadow: 0 0 10px 0 ${gs.colours.black};
   position: fixed;
@@ -37,17 +37,17 @@ const MenuButton = PrimaryButton.extend`
   border-radius: 0;
   padding: 0;
   font-size: initial;
-  
+
   &:hover,
   &:focus {
     border-bottom: none;
     margin-top: 0;
   }
-  
+
   &:active {
     margin-top: 0;
   }
-  
+
   @media (min-width: ${gs.breakpoints.desktop}) {
     display: none;
   }
@@ -74,12 +74,12 @@ export const Link = sc.a`
   text-decoration: underline;
   cursor: pointer;
   transition: color ${gs.transitions.fast};
-  
+
   &:last-child {
     padding-right: ${gs.spacing.normal};
     border-right: none;
   }
-  
+
   &:hover,
   &:focus {
     color: ${gs.colours.secondary.default};

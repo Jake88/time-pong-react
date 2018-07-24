@@ -7,22 +7,16 @@ import {
   BrandButton
 } from './styles'
 
+const varietyMap = {
+  [varietyTypes.LINK]: LinkButton,
+  [varietyTypes.BRAND]: BrandButton,
+  [varietyTypes.SECONDARY]: SecondaryButton,
+  [varietyTypes.PRIMARY]: PrimaryButton
+}
+
 const Button = (props) => {
   const { variety } = props
-
-  let ButtonType = PrimaryButton
-
-  switch (variety) {
-    case varietyTypes.LINK:
-      ButtonType = LinkButton
-      break
-    case varietyTypes.BRAND:
-      ButtonType = BrandButton
-      break
-    case varietyTypes.SECONDARY:
-      ButtonType = SecondaryButton
-      break
-  }
+  const ButtonType = varietyMap[variety] || PrimaryButton
 
   return (
     <ButtonType {...props}>

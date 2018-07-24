@@ -6,7 +6,7 @@ import { Circle } from 'styled-icons/fa-regular/Circle'
 import { CheckCircle } from 'styled-icons/fa-regular/CheckCircle'
 import { TimesCircle } from 'styled-icons/fa-regular/TimesCircle'
 
-import Button, { ButtonPropTypes, buttonVarietyTypes, ButtonGroup } from 'components/common/inputs/button'
+import Button, { ButtonPropTypes, buttonVarietyTypes, ButtonGroup } from 'components/common/button'
 
 import {
   LoadIndicatorAligner,
@@ -34,9 +34,11 @@ const Loader = (props) => {
             {status.loading ? <Circle /> : status.error ? <TimesCircle /> : <CheckCircle />}
           </LoadIndicator>
         </LoadIndicatorAligner>
+
         <LoadLabel status={status}>
           {status.loading ? `Doing stuff` : status.error ? `D'oh!` : `Poggers!`}
         </LoadLabel>
+
         <FlexStretch>
           {status.error && (
             <React.Fragment>
@@ -58,6 +60,7 @@ const Loader = (props) => {
               </ButtonGroup>
             </React.Fragment>
           )}
+
           {status.success && (
             <React.Fragment>
               <LoadMessage>{successMessage}</LoadMessage>

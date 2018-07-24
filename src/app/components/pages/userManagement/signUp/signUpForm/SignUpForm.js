@@ -2,7 +2,7 @@ import React from 'react'
 import { Field } from 'redux-form'
 import TextField from 'components/common/inputs/textField'
 import { Aligner, AlteredText } from 'components/common/styledComponents'
-import Button, { ButtonGroup } from 'components/common/inputs/button'
+import Button, { ButtonGroup } from 'components/common/button'
 import ROUTES from 'utils/constants/routes'
 import {
   validateRequired,

@@ -1,4 +1,4 @@
 import StickyHeader from './StickyHeader'
-import {connecter} from './StickyHeaderContainer'
+import connect from './connect'
 
-export default connecter(StickyHeader)
+export default connect(StickyHeader)

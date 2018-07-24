@@ -1,7 +1,7 @@
-import enhance, {
+import {
   mapDispatchToProps,
   mapStateToProps
-} from './MenuContainer'
+} from './connect'
 import {
   isMenuActive,
   toggleMenu

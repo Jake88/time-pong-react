@@ -1,7 +1,7 @@
 import React from 'react'
 import SignUpForm from './signUpForm/index'
 import { Title, SubHeader, Divider, ContentPanel } from 'components/common/styledComponents'
-import Button from 'components/common/inputs/button'
+import Button from 'components/common/button'
 import Loader from 'components/common/loader'
 import ROUTES from 'utils/constants/routes'
 

@@ -28,6 +28,12 @@ export const font = {
   }
 }
 
+export const lineHeights = {
+  withoutBorder: '50px',
+  withThinBorder: '48px',
+  withThickBorder: '46px',
+}
+
 export const spacing = {
   nil: 0,
   small: '8px',
@@ -85,7 +91,6 @@ export const transitions = {
 }
 
 export const specifics = {
-  stickyHeaderHeight: '48px',
   navHeight: '196px'
 }
 

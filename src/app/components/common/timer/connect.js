@@ -15,4 +15,4 @@ export const mapDispatchToProps = dispatch => ({
   startTimer: () => dispatch(actions.startTimer())
 })
 
-export const connecter = connect(mapStateToProps, mapDispatchToProps)
+export default connect(mapStateToProps, mapDispatchToProps)

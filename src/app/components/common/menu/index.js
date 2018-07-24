@@ -1,4 +1,4 @@
 import Menu from './Menu'
-import {connecter} from './MenuContainer'
+import connect from './connect'
 
-export default connecter(Menu)
+export default connect(Menu)

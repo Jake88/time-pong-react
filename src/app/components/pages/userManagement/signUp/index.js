@@ -1,4 +1,4 @@
 import SignUp from './SignUp'
-import { connecter } from './SignUpContainer'
+import connect from './connect'
 
-export default connecter(SignUp)
+export default connect(SignUp)
