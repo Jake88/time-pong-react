@@ -5,16 +5,26 @@ import {
   ModalWrapper
 } from './styles'
 
-const Modal = (props) => {
-  const { height, width } = props
+class Modal extends React.Component {
+  componentWillMount() {
+    document.body.style.overflowY = 'hidden'
+  }
 
-  return (
-    <Overlay>
-      <ModalWrapper height={height} width={width}>
-        {props.children}
-      </ModalWrapper>
-    </Overlay>
-  )
+  componentWillUnmount() {
+    document.body.style.overflowY = 'auto'
+  }
+
+  render() {
+    const { height, width, children } = this.props
+
+    return (
+      <Overlay>
+        <ModalWrapper height={height} width={width}>
+          {children}
+        </ModalWrapper>
+      </Overlay>
+    )
+  }
 }
 
 Modal.propTypes = {

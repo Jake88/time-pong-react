@@ -13,7 +13,6 @@ const pulse = keyframes`
   100% {
     transform: scale(.8);
   }
-  
 `
 
 export const LoadAligner = sc.div`
@@ -54,7 +53,7 @@ export const LoadLabel = SubHeader.extend`
     status.loading ?
       gs.colours.grey : status.error ?
       gs.colours.error.default : gs.colours.success.default
-  )}; 
+  )};
 `
 
 export const LoadMessage = sc.p`

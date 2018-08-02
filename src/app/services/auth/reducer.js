@@ -6,9 +6,10 @@ const initialState = {}
 // reducers
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SIGN_UP:
+    case types.SET_USER:
       return {
-        ...state
+        ...state,
+        user: action.user
       }
     default:
       return state

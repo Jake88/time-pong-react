@@ -28,7 +28,7 @@ const SignUpForm = (props) => (
       name='username'
       placeholder='Eg: TimePonger78'
       component={TextField}
-    /> <br/>
+    />
 
     <Field
       label='Email'
@@ -36,7 +36,7 @@ const SignUpForm = (props) => (
       placeholder='Eg: timeponger_78@email.com'
       component={TextField}
       validate={[validateRequired, validateEmail]}
-    /> <br/>
+    />
 
     <Field
       label='Password'
@@ -45,7 +45,7 @@ const SignUpForm = (props) => (
       component={TextField}
       validate={[validateRequired, validateMediumPassword]}
       warn={[validateStrongPassword]}
-    /> <br/>
+    />
 
     <Field
       label='Confirm Password'
@@ -53,7 +53,7 @@ const SignUpForm = (props) => (
       type='password'
       component={TextField}
       validate={[validateRequired, validateConfirmPassword]}
-    /> <br/>
+    />
 
     <Aligner aligned='right' >
       <ButtonGroup>

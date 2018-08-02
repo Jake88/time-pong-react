@@ -12,4 +12,4 @@ const mapDispatchToProps = dispatch => ({
   go: (path) => dispatch(push(path))
 })
 
-export const connecter = connect(mapStateToProps, mapDispatchToProps)
+export default connect(mapStateToProps, mapDispatchToProps)

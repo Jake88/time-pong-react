@@ -28,13 +28,13 @@ const Button = sc.button`
   padding: ${gs.spacing.nil} ${gs.spacing.large};
   cursor: pointer;
   border-radius: ${gs.radius.small};
-  border: none;  
+  border: none;
 `
 
 export const PrimaryButton = Button.extend`
   background-color: ${gs.colours.primary.default};
   color: ${gs.colours.white};
-  
+
   &:hover,
   &:focus {
     color: ${gs.colours.secondary.default};
@@ -48,7 +48,7 @@ export const SecondaryButton = Button.extend`
   line-height: ${gs.lineHeights.withThickBorder};
   color: ${gs.colours.primary.default};
   background-color: ${gs.colours.white};
-  
+
   &:hover,
   &:focus {
     box-shadow: 0 0 80px 0 ${gs.colours.primary.lightest} inset;
@@ -59,8 +59,8 @@ export const LinkButton = Button.extend`
   text-decoration: underline;
   color: ${gs.colours.primary.default};
   background-color: transparent;
-  padding: ${gs.spacing.small} ${gs.spacing.small};
-  
+  padding: ${gs.spacing.nil} ${gs.spacing.small};
+
   &:hover,
   &:focus {
     transform: scale(1.1);
@@ -79,18 +79,18 @@ export const BrandButton = Button.extend`
   align-items: center;
   margin-bottom: ${gs.spacing.small};
   position: relative;
-  
+
   & > * {
     flex-grow: 1;
   }
-  
+
   & svg {
     position: absolute;
     left: ${gs.spacing.small};
     height: 34px;
     width: 34px;
   }
-  
+
   &:hover,
   &:focus {
     background-color: ${({brand}) => brand ? brand.highlight : gs.colours.primary.lighter};

@@ -11,15 +11,6 @@ export const Overlay = sc.div`
   width: 100%;
   background-color: ${gs.colours.fadedBlack} ;
   z-index: ${gs.layers.overlay};
-  
-  ${() => {
-    injectGlobal`
-      body {
-        overflow: hidden;
-        scroll: none;
-      }
-    `
-  }}
 `
 
 export const ModalWrapper = ContentPanel.extend`
@@ -32,8 +23,8 @@ export const ModalWrapper = ContentPanel.extend`
   height: ${({height}) => height}px;
   left: calc(50% - ${({width}) => width / 2}px);
   top: calc(50% - ${({height}) => height / 2}px);
-  
+
   & > * {
     flex-grow: 1;
-  } 
+  }
 `

@@ -6,7 +6,7 @@ import {
 
 const mapStateToProps = () => ({})
 const mapDispatchToProps = dispatch => ({
-  onSubmit: () => dispatch(authActions.signUp()),
+  onSubmit: () => dispatch(authActions.signIn()),
   go: (path) => dispatch(push(path))
 })
 

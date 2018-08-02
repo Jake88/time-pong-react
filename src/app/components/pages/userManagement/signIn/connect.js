@@ -1,12 +1,14 @@
 import { connect } from 'react-redux'
-import { push } from 'connected-react-router'
-import {
-  actions as authActions
-} from 'services/auth'
+import { types as authTypes } from 'services/auth'
+import { selectors as apiSelectors } from 'services/apiManager'
 
-const mapStateToProps = () => ({})
+import { push } from 'connected-react-router'
+
+const mapStateToProps = (state) => ({
+  status: apiSelectors.getRequestStatus(state, authTypes.SIGN_IN)
+})
+
 const mapDispatchToProps = dispatch => ({
-  onSubmit: () => dispatch(authActions.signUp()),
   go: (path) => dispatch(push(path))
 })
 

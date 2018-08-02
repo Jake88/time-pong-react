@@ -47,46 +47,50 @@ class StickyHeader extends React.Component {
 
 
   render() {
+    const {
+      user,
+      toggleMenu,
+      go
+    } = this.props
     return (
-    <div ref={this.setWrapperRef}>
-      <Banner>
-        <Menu />
-        <BurgerButton
-          aria-label='Menu'
-          title='Menu'
-          onClick={() => this.props.toggleMenu()}//todo you should just have a user icon that takes you to a manage page to do all this. maybe have sign in / up or user name / sign out. then the user button if logged in which takes yu to a manage things page
-        >
-          <BurgerBars />
-        </BurgerButton>
+      <div ref={this.setWrapperRef}>
+        <Banner>
+          <Menu />
+          <BurgerButton
+            aria-label='Menu'
+            title='Menu'
+            onClick={() => toggleMenu()}//todo you should just have a user icon that takes you to a manage page to do all this. maybe have sign in / up or user name / sign out. then the user button if logged in which takes yu to a manage things page
+          >
+            <BurgerBars />
+          </BurgerButton>
 
-        {
-          //need to create a condition to either display user name or display sign in / up links
-        }
-
-        <UserManagement>
           {
-            // If user ?
-            //  Display Name and user button
-            // else :
-            //  Display Sign up | Sign in links to pages
-            false && (
-              <UserButton
-                aria-label='Menu'
-                title='Menu'
-                onClick={() => console.log('nav to a user manage page')}
-              >
-                <UserIcon />
-              </UserButton>
-            )
+            // user && user.email
           }
-          <Link onClick={() => this.props.go(ROUTES.SIGN_UP)}>Sign up</Link>
-          <Link onClick={() => this.props.go(ROUTES.SIGN_IN)}>Log in</Link>
-        </UserManagement>
 
-        <Logo>Time Pong</Logo>
-      </Banner>
-    </div>
-  )}
+          <UserManagement>
+            {user ? (
+                <UserButton
+                  aria-label='Menu'
+                  title='Menu'
+                  onClick={() => console.log('nav to a user manage page')}
+                >
+                  <UserIcon />
+                </UserButton>
+              ) : (
+                <React.Fragment>
+                  <Link onClick={() => go(ROUTES.SIGN_UP)}>Sign up</Link>
+                  <Link onClick={() => go(ROUTES.SIGN_IN)}>Log in</Link>
+                </React.Fragment>
+              )
+            }
+          </UserManagement>
+
+          <Logo>Time Pong</Logo>
+        </Banner>
+      </div>
+    )
+  }
 }
 
 export default StickyHeader

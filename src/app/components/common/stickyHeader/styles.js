@@ -31,11 +31,11 @@ export const UserIcon = sc(UserCog).attrs({
 })``
 
 const MenuButton = PrimaryButton.extend`
-  height: ${gs.specifics.stickyHeaderHeight};
-  width: ${gs.specifics.stickyHeaderHeight};
+  height: ${gs.lineHeights.withThinBorder};
+  width: ${gs.lineHeights.withThinBorder};
+  padding: 0;
   border-bottom: none;
   border-radius: 0;
-  padding: 0;
   font-size: initial;
 
   &:hover,
