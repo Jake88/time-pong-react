@@ -20,16 +20,13 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {loading: true}
-    // this.state = {}
   }
 
   componentDidMount() {
-    setTimeout(() =>
     firebase.onAuthStateChanged(user => {
       this.props.setUser(user)
       this.setState({loading: false})
     })
-    , 2000)
   }
 
   render() {
