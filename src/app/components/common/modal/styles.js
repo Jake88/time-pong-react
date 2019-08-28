@@ -16,15 +16,11 @@ export const Overlay = sc.div`
 export const ModalWrapper = ContentPanel.extend`
   position: fixed;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   width: ${({width}) => width}px;
   height: ${({height}) => height}px;
   left: calc(50% - ${({width}) => width / 2}px);
   top: calc(50% - ${({height}) => height / 2}px);
-
-  & > * {
-    flex-grow: 1;
-  }
 `

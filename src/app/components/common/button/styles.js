@@ -21,7 +21,7 @@ export const ButtonGroup = sc.div`
 `
 
 const Button = sc.button`
-  transition: box-shadow ${gs.transitions.normal}, color ${gs.transitions.normal};
+  transition: all ${gs.transitions.normal};
   font-size: ${({small}) => small ? gs.font.sizes.small : gs.font.sizes.normal};
   font-weight: ${gs.font.weights.normal};
   line-height: ${gs.lineHeights.withoutBorder};

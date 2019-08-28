@@ -9,6 +9,8 @@ export default {
   'auth/email-already-in-use': `Looks like the provided email is already in use.`,
   'auth/operation-not-allowed': `Looks like we've disabled sign up with email. This is probably a mistake, please let us know.`,
   'auth/weak-password': `Our servers have determined your password is too weak. Please try again.`,
+  // Reset password
+  'auth/user-not-found-alt': `Can't find this email. Have you signed up previously?`,
 
   default: `Critical error. We aren't sure why though, sorry! Try again?`
 }

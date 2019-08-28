@@ -22,6 +22,7 @@ function* signUp () {
 }
 
 function* signIn () {
+  console.log('signing in?')
   try {
     const { email, password } = yield select(getFormValues(FormNames.SIGN_IN))
     const response = yield call(Firebase.doSignInWithEmailAndPassword, email, password)
@@ -34,7 +35,46 @@ function* signIn () {
   }
 }
 
+function* resetPassword () {
+  try {
+    const { email } = yield select(getFormValues(FormNames.RESET_PASSWORD))
+    const response = yield call(Firebase.doPasswordReset, email)
+    console.log('Successfully reset password!', response)
+    return response
+  } catch (err) {
+    console.log('Error resetting password', err)
+    if (err.code === 'auth/user-not-found') err.code = 'auth/user-not-found-alt'
+    throw(err)
+  }
+}
+
+function* updatePassword () {
+  try {
+    const { password } = yield select(getFormValues(FormNames.UPDATE_PASSWORD))
+    const response = yield call(Firebase.doPasswordUpdate, password)
+    console.log('Successfully updated password!', response)
+    return response
+  } catch (err) {
+    console.log('Error updating password', err)
+    throw(err)
+  }
+}
+
+function* signOut () {
+  try {
+    const response = yield call(Firebase.doSignOut)
+    console.log('Successfully signed out!', response)
+    return response
+  } catch (err) {
+    console.log('Error signing out', err)
+    throw(err)
+  }
+}
+
 export default {
   signUp: takeLatest(authTypes.SIGN_UP, ApiManager.addStatus(signUp)),
-  signIn: takeLatest(authTypes.SIGN_IN, ApiManager.addStatus(signIn))
+  signIn: takeLatest(authTypes.SIGN_IN, ApiManager.addStatus(signIn)),
+  signOut: takeLatest(authTypes.SIGN_OUT, ApiManager.addStatus(signOut)),
+  resetPassword: takeLatest(authTypes.RESET_PASSWORD, ApiManager.addStatus(resetPassword)),
+  updatePassword: takeLatest(authTypes.UPDATE_PASSWORD, ApiManager.addStatus(updatePassword))
 }

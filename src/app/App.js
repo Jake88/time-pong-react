@@ -43,8 +43,8 @@ class App extends React.Component {
               <Route exact path={ROUTES.CARD_CREATOR} component={page.CardCreator} />
               <Route exact path={ROUTES.SIGN_UP} component={page.SignUp} />
               <Route exact path={ROUTES.SIGN_IN} component={page.SignIn} />
-              <Route exact path={ROUTES.MANAGE} component={() => <h1>Manage</h1>} />
-              <Route exact path={ROUTES.FORGOT_PASSWORD} component={() => <h1>Forgot PW</h1>} />
+              <Route exact path={ROUTES.MANAGE} component={page.UserManagement} />
+              <Route exact path={ROUTES.FORGOT_PASSWORD} component={page.ForgotPassword} />
               <Redirect from='*' to={ROUTES.INSTRUCTIONS} />
             </Switch>
           </Page>

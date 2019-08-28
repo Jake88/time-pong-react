@@ -33,6 +33,7 @@ export const UserIcon = sc(UserCog).attrs({
 const MenuButton = PrimaryButton.extend`
   height: ${gs.lineHeights.withThinBorder};
   width: ${gs.lineHeights.withThinBorder};
+  line-height: ${gs.lineHeights.withThinBorder};
   padding: 0;
   border-bottom: none;
   border-radius: 0;
@@ -72,8 +73,9 @@ export const Link = sc.a`
   border-right: ${gs.borders.thin} ${gs.colours.white};
   padding: 0 ${gs.spacing.small};
   text-decoration: underline;
+  // text-decoration-color: ${gs.colours.white}; todo: Make this default yellow if active
   cursor: pointer;
-  transition: color ${gs.transitions.fast};
+  transition: color ${gs.transitions.normal};
 
   &:last-child {
     padding-right: ${gs.spacing.normal};

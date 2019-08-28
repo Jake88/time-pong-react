@@ -73,7 +73,7 @@ class StickyHeader extends React.Component {
                 <UserButton
                   aria-label='Menu'
                   title='Menu'
-                  onClick={() => console.log('nav to a user manage page')}
+                  onClick={() => go(ROUTES.MANAGE)}
                 >
                   <UserIcon />
                 </UserButton>

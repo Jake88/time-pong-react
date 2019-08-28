@@ -29,6 +29,10 @@ const SignInForm = (props) => (
 
     <Aligner aligned='right' >
       <ButtonGroup>
+        <AlteredText small>Too drunk to remember?</AlteredText>
+        <Button id='forgotPassword' small variety='link' onClick={() => props.go(ROUTES.FORGOT_PASSWORD)}>Reset password</Button>
+      </ButtonGroup>
+      <ButtonGroup>
         <AlteredText small>Not a member?</AlteredText>
         <Button id='signInLogIn' small variety='link' onClick={() => props.go(ROUTES.SIGN_UP)}>Sign up</Button>
         <Button id='signInSubmit' type='submit'>Log in</Button>

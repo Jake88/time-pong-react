@@ -15,13 +15,9 @@ const pulse = keyframes`
   }
 `
 
-export const LoadAligner = sc.div`
+export const FlexStretch = sc.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
-`
-
-export const FlexStretch = LoadAligner.extend`
   flex-grow: 1;
 `
 

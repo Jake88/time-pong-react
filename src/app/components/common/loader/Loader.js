@@ -13,7 +13,6 @@ import {
   LoadIndicator,
   LoadLabel,
   LoadMessage,
-  LoadAligner,
   FlexStretch
 } from './styles'
 
@@ -28,55 +27,53 @@ const Loader = (props) => {
 
   return (
     <Modal>
-      <LoadAligner >
-        <LoadIndicatorAligner>
-          <LoadIndicator status={status}>
-            {status.loading ? <Circle /> : status.error ? <TimesCircle /> : <CheckCircle />}
-          </LoadIndicator>
-        </LoadIndicatorAligner>
+      <LoadIndicatorAligner>
+        <LoadIndicator status={status}>
+          {status.loading ? <Circle /> : status.error ? <TimesCircle /> : <CheckCircle />}
+        </LoadIndicator>
+      </LoadIndicatorAligner>
 
-        <LoadLabel status={status}>
-          {status.loading ? `Doing stuff` : status.error ? `D'oh!` : `Poggers!`}
-        </LoadLabel>
+      <LoadLabel status={status}>
+        {status.loading ? `Doing stuff` : status.error ? `D'oh!` : `Poggers!`}
+      </LoadLabel>
 
-        <FlexStretch>
-          {status.error && (
-            <React.Fragment>
-              <LoadMessage>{status.error}</LoadMessage>
-              <ButtonGroup direction='vertical'>
-                <Button
-                  id='loaderClose'
-                  variety={buttonVarietyTypes.SECONDARY}
-                  onClick={() => apiReset(status.originalAction.type)}
-                >
-                  Close
-                </Button>
-                <Button
-                  id='loaderTryAgain'
-                  onClick={() => retry(status.originalAction)}
-                >
-                  Try again
-                </Button>
-              </ButtonGroup>
-            </React.Fragment>
-          )}
-
-          {status.success && (
-            <React.Fragment>
-              <LoadMessage>{successMessage}</LoadMessage>
+      <FlexStretch>
+        {status.error && (
+          <React.Fragment>
+            <LoadMessage>{status.error}</LoadMessage>
+            <ButtonGroup direction='vertical'>
               <Button
-                {...successButton}
-                onClick={() => {
-                  apiReset(status.originalAction.type)
-                  successButton.onClick()
-                }}
+                id='loaderClose'
+                variety={buttonVarietyTypes.SECONDARY}
+                onClick={() => apiReset(status.originalAction.type)}
               >
-                {successButton.label}
+                Close
               </Button>
-            </React.Fragment>
-          )}
-        </FlexStretch>
-      </LoadAligner>
+              <Button
+                id='loaderTryAgain'
+                onClick={() => retry(status.originalAction)}
+              >
+                Try again
+              </Button>
+            </ButtonGroup>
+          </React.Fragment>
+        )}
+
+        {status.success && (
+          <React.Fragment>
+            <LoadMessage>{successMessage}</LoadMessage>
+            <Button
+              {...successButton}
+              onClick={() => {
+                apiReset(status.originalAction.type)
+                successButton.onClick()
+              }}
+            >
+              {successButton.label}
+            </Button>
+          </React.Fragment>
+        )}
+      </FlexStretch>
     </Modal>
   )
 }
