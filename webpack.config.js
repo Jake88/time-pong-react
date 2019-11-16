@@ -21,6 +21,11 @@ module.exports = {
             loader: 'html-loader'
           }
         ]
+      },
+      {
+        test: /\.mp3$/,
+        exclude: /node_modules/,
+        loader: 'file-loader'
       }
     ]
   },

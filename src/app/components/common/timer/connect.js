@@ -12,7 +12,7 @@ export const mapStateToProps = state => {
 }
 
 export const mapDispatchToProps = dispatch => ({
-  startTimer: () => dispatch(actions.startTimer())
+  // drawCard: () => dispatch(actions.startTimer())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)
